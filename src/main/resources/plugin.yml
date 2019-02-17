@@ -1,0 +1,4 @@
+name: Spider
+main: be.bhasher.spider.Spider
+version: ${project.version}
+author: Bhasher

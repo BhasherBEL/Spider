@@ -1,0 +1,10 @@
+
+‹"squid:ClassVariableVisibilityCheck"QMake speed a static final constant or non-public and provide accessors if needed.(®Ô–ûûÿÿÿÿ8ø¤«•-
+‰"squid:ClassVariableVisibilityCheck"TMake location a static final constant or non-public and provide accessors if needed.(Éä‹©8Ã”ƒœ-
+"squid:ClassVariableVisibilityCheck"SMake groundY a static final constant or non-public and provide accessors if needed.(İ…şûÿÿÿÿ8¼Á›-
+‰"squid:ClassVariableVisibilityCheck"TMake airSpeed a static final constant or non-public and provide accessors if needed.(˜Ø¶Ì8©¶¡œ-
+"squid:ClassVariableVisibilityCheck "VMake situations a static final constant or non-public and provide accessors if needed.(Ş¹öûÿÿÿÿ8¾Ø¿Ê-
+"squid:ClassVariableVisibilityCheck"VMake groundTime a static final constant or non-public and provide accessors if needed.(òÄ¡Öüÿÿÿÿ8Š¢Èœ-
+"squid:ClassVariableVisibilityCheck"UMake lastSpeed a static final constant or non-public and provide accessors if needed.(Ì´Éûÿÿÿÿ8¼Á›-
+˜squid:S1319 "uThe type of the "situations" object should be an interface such as "List" rather than the implementation "ArrayList".(Ş¹öûÿÿÿÿ8¾Ø¿Ê-
+’"squid:ClassVariableVisibilityCheck"XMake lastLocation a static final constant or non-public and provide accessors if needed.(Œùşüÿÿÿÿ8Õ™Á›-
