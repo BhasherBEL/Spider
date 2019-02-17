@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97d0cdba-6bb3-4f33-a8fc-c34bc789e050" name="Default Changelist" comment="" />
+    <list default="true" id="97d0cdba-6bb3-4f33-a8fc-c34bc789e050" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/PlayerRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bhasher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bhasher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/Cheats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveAnalysis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveDescription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveEndSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveStartSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/Situation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +28,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveDescription.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1059">
-              <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+            <state relative-caret-position="799">
+              <caret line="120" column="59" lean-forward="true" selection-start-line="120" selection-start-column="59" selection-end-line="120" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="750">
+              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,11 +88,12 @@
       <replace>() == Mat</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/Cheats.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/cheatplayers/SpeedHackPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/move/Elytras.java" />
@@ -66,7 +108,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/SpiderConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/speed/Situation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/speed/MoveDescription.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/speed/MoveEndSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/speed/MoveAnalysis.java" />
@@ -76,18 +117,23 @@
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/move/FreeFall.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/move/SpecialMove.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerEquipment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/Spider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/Format.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/Time.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveAnalysis.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveRunnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveEndSet.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveStartSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/Situation.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveDescription.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/PlayerRunnable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java" />
       </list>
     </option>
   </component>
@@ -103,12 +149,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1339" />
     <option name="y" value="25" />
     <option name="width" value="1861" />
     <option name="height" value="1055" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -163,8 +210,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="spider" type="462c0819:PsiDirectoryNode" />
-              <item name="cheats" type="462c0819:PsiDirectoryNode" />
-              <item name="move" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Spider" type="b2602c69:ProjectViewProjectNode" />
@@ -202,7 +248,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Project_Default.xml" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.4450194" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
@@ -238,7 +284,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1339" y="25" width="1861" height="1055" extended-state="7" />
+    <frame x="1339" y="25" width="1861" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17465565" />
@@ -264,41 +310,10 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.8.8-R0.1-SNAPSHOT/bukkit-1.8.8-R0.1-20160221.082532-43.jar!/org/bukkit/plugin/java/JavaPlugin.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="329" column="28" lean-forward="true" selection-start-line="329" selection-start-column="28" selection-end-line="329" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.8.8-R0.1-SNAPSHOT/bukkit-1.8.8-R0.1-20160221.082532-43.jar!/org/bukkit/Material.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="452" column="54" selection-start-line="452" selection-start-column="47" selection-end-line="452" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/logging/Logger.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="199" column="16" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/Cheats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -347,7 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.13.2-R0.1-SNAPSHOT/bukkit-1.13.2-R0.1-20190209.233606-153.jar!/org/bukkit/entity/LivingEntity.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -439,76 +453,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/SpiderConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/move/FreeFall.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/move/SpecialMove.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/Spider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="44" selection-start-line="111" selection-start-column="44" selection-end-line="111" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerEquipment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/Format.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -523,10 +469,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveAnalysis.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveRunnableSave.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveEndSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveStartSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/Situation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveDescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -543,37 +527,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveRunnableSave.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveEndSet.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.13.2-R0.1-SNAPSHOT/bukkit-1.13.2-R0.1-20190209.233606-153.jar!/org/bukkit/entity/Player.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="-315">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveStartSet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerEquipment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/Situation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        <state relative-caret-position="630">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveDescription.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/move/MoveInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1059">
-          <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/Cheats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/listener/SpiderPlayerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/alerts/AlertType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/Spider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/SpiderConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/PlayerRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/player/SpiderPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="120" column="59" lean-forward="true" selection-start-line="120" selection-start-column="59" selection-end-line="120" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.13.2-R0.1-SNAPSHOT/bukkit-1.13.2-R0.1-20190209.233606-153.jar!/org/bukkit/Server.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.13.2-R0.1-SNAPSHOT/bukkit-1.13.2-R0.1-20190209.233606-153.jar!/org/bukkit/Bukkit.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/utils/player/PlayerMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/bhasher/spider/cheats/SpeedHack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -583,6 +669,30 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4450194" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -606,6 +716,18 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spider</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <splitter-proportions>
@@ -619,6 +741,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.google.code.gson:gson:2.8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

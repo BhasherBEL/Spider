@@ -3,7 +3,7 @@ package be.bhasher.spider.alerts;
 public enum AlertType {
 
 	FLY("Fly"),
-	JUMP("Jump"),
+	HIGH_UMP("High Jump"),
 	SPEEDHACK("Speed Hack");
 
 	private final String name;

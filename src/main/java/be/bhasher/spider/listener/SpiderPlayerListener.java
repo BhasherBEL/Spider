@@ -16,7 +16,7 @@ public class SpiderPlayerListener implements Listener {
 	 */
 	@EventHandler
 	public void onPlayerJoin(final PlayerJoinEvent event){
-		SpiderPlayer.set(event.getPlayer());
+		SpiderPlayer.init(event.getPlayer());
 	}
 
 	/**
