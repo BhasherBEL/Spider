@@ -29,23 +29,33 @@ public class SpeedHack {
 		}
 
 		final Vector move = sp.location.toVector().subtract(sp.lastLocation.toVector());
-		final double horizontal_move = move.clone().setY(0).length();
 
-		final double max_horizontal_distance = PlayerMove.getHorizontalSpeed(sp.getPlayer())/20* PlayerRunnable.TICK_RATE;
+		// If move is only horizontal
+		if(sp.groundTime > 0){
 
-		final double ratio = (horizontal_move/max_horizontal_distance);
+			final double horizontal_move = move.clone().setY(0).length();
 
-		if(ratio > 0.5){
-			sp.speedhackScore += Math.max((ratio-1), 0)*PlayerRunnable.TICK_RATE;
-			sp.speedhackScore -= 0.1*PlayerRunnable.TICK_RATE;
-			if(sp.speedhackScore < 0) {
-				sp.speedhackScore = 0;
+			double max_horizontal_distance = PlayerMove.getHorizontalSpeed(sp.getPlayer())/20* PlayerRunnable.TICK_RATE;
+
+			if(sp.groundTime <= 4){
+				max_horizontal_distance *= 1.2;
 			}
-		}
 
-		if(ratio > 1.01){
+			final double ratio = (horizontal_move/max_horizontal_distance);
 
-			sp.alert(AlertType.SPEEDHACK, "score: " + Format.round(sp.speedhackScore, 2) + ", ratio: " + Format.round(ratio*100,2) + "%");
+			if(ratio > 0.5){
+				sp.speedhackScore += Math.max((ratio-1), 0)*PlayerRunnable.TICK_RATE;
+				sp.speedhackScore -= 0.1*PlayerRunnable.TICK_RATE;
+				if(sp.speedhackScore < 0) {
+					sp.speedhackScore = 0;
+				}
+			}
+
+			if(ratio > 1.01){
+
+				sp.alert(AlertType.SPEEDHACK, "score: " + Format.round(sp.speedhackScore, 2) + ", ratio: " + Format.round(ratio*100,2) + "%");
+
+			}
 
 		}
 

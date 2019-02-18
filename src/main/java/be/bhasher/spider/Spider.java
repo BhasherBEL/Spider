@@ -3,6 +3,7 @@ package be.bhasher.spider;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import be.bhasher.spider.cheats.CheatListener;
 import be.bhasher.spider.commands.WalkSpeedCommand;
 import be.bhasher.spider.listener.SpiderPlayerListener;
 import be.bhasher.spider.player.SpiderPlayer;
@@ -24,6 +25,7 @@ public class Spider extends JavaPlugin {
 		SpiderPlayer.resetPlayers() ;
 		getCommand("walkspeed").setExecutor(new WalkSpeedCommand());
 		getServer().getPluginManager().registerEvents(new SpiderPlayerListener(), this);
+		getServer().getPluginManager().registerEvents(new CheatListener(), this);
 	}
 
 	/**

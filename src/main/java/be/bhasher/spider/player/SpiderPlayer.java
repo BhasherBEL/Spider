@@ -29,7 +29,8 @@ public class SpiderPlayer {
 	public Location lastLocation;
 	public Location location;
 	public double groundY;
-	public double speedhackScore=0;
+	public double groundTime;
+	public double speedhackScore = 0;
 
 	/**
 	 * Initializes a new {@link SpiderPlayer}.
@@ -148,9 +149,9 @@ public class SpiderPlayer {
 	 * @param text Extra content of your alert.
 	 */
 	public void alert(final AlertType type, final AlertForce force, final Object text){
-		if(force != AlertForce.NONE) {
+		//if(force != AlertForce.NONE) {
 			PlayerMessage.sendMessageWithPermission(SpiderPermission.PREVENT_ALERT, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
-		}
+		//}
 	}
 
 	/**

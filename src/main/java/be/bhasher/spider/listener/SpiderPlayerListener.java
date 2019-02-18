@@ -2,6 +2,7 @@ package be.bhasher.spider.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -26,7 +27,7 @@ public class SpiderPlayerListener implements Listener {
 	 * Disable the {@link SpiderPlayer} when a {@link Player} disconnect.
 	 * @param event a {@link PlayerQuitEvent}.
 	 */
-	@EventHandler
+	@EventHandler(priority = EventPriority.MONITOR)
 	public void onPlayerQuit(final PlayerQuitEvent event){
 		SpiderPlayer.remove(event.getPlayer());
 	}

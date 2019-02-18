@@ -65,7 +65,7 @@ public class PlayerMove {
 			if (effect.getType().equals(PotionEffectType.SPEED)) {
 				result += 0.2 * (effect.getAmplifier()+1);
 			} else if (effect.getType().equals(PotionEffectType.SLOW)){
-				result -= 0.15 * (effect.getAmplifier()+1);
+				result -= result*0.15 * (effect.getAmplifier()+1);
 			}
 		}
 		return result;

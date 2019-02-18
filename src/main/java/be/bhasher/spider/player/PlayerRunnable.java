@@ -42,6 +42,9 @@ public class PlayerRunnable implements Runnable{
 		sp.location = sp.getPlayer().getLocation();
 		if(sp.getPlayer().isOnGround()){
 			sp.groundY = sp.location.getY();
+			sp.groundTime++;
+		}else{
+			sp.groundTime = 0;
 		}
 
 		new SpeedHack(sp);
