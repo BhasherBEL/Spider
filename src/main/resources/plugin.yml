@@ -3,3 +3,10 @@ main: be.bhasher.spider.Spider
 version: ${project.version}
 api-version: 1.13
 author: Bhasher
+commands:
+  walkspeed:
+    description: Modifie le walkspeed du joueur pour tester l'antispeedhack.
+    usage: /walkspeed <new walkspeed>
+    permission: spider.command.walkspeed
+    aliases:
+      - ws

@@ -7,7 +7,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import be.bhasher.spider.SpiderPermission;
+import be.bhasher.spider.alerts.AlertForce;
 import be.bhasher.spider.alerts.AlertType;
+import be.bhasher.spider.utils.player.PlayerMessage;
 import be.bhasher.spider.utils.player.PlayerMove;
 
 /**
@@ -26,6 +29,7 @@ public class SpiderPlayer {
 	public Location lastLocation;
 	public Location location;
 	public double groundY;
+	public double speedhackScore=0;
 
 	/**
 	 * Initializes a new {@link SpiderPlayer}.
@@ -108,13 +112,44 @@ public class SpiderPlayer {
 	}
 
 	/**
+	 * Get the {@link AlertForce} according to the speedhackScore.
+	 * @return the {@link AlertForce}.
+	 */
+	public AlertForce getSpeedHackForce(){
+		if(speedhackScore > 2000){
+			return AlertForce.CRITICAL;
+		}else if(speedhackScore > 1000){
+			return AlertForce.FLAGGED;
+		}else if(speedhackScore > 500){
+			return AlertForce.PROVEN;
+		}else if(speedhackScore > 200){
+			return AlertForce.SUSPECTED;
+		}else if(speedhackScore > 100){
+			return AlertForce.POTENTIAL;
+		}else{
+			return AlertForce.NONE;
+		}
+	}
+
+	/**
 	 * Send a spider alert to the {@link Player}.
-	 * @param alertType Type of your alert.
+	 * @param type Type of your alert.
 	 * @param text Extra content of your alert.
 	 */
-	public void alert(final AlertType alertType, final Object text){
+	public void alert(final AlertType type, final Object text){
+		alert(type, getSpeedHackForce(), text);
+	}
 
-		player.sendMessage("§c[§3Spider§c]§f " + alertType.getName() + " §7§o(" + text.toString() + ")");
+	/**
+	 * Send a spider alert to the {@link Player}.
+	 * @param type Type of your alert.
+	 * @param force Force of your alert.
+	 * @param text Extra content of your alert.
+	 */
+	public void alert(final AlertType type, final AlertForce force, final Object text){
+		if(force != AlertForce.NONE) {
+			PlayerMessage.sendMessageWithPermission(SpiderPermission.PREVENT_ALERT, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
+		}
 	}
 
 	public boolean hasMoved(){

@@ -2,7 +2,6 @@ package be.bhasher.spider.cheats;
 
 import org.bukkit.util.Vector;
 
-import be.bhasher.spider.SpiderConfig;
 import be.bhasher.spider.alerts.AlertType;
 import be.bhasher.spider.player.PlayerRunnable;
 import be.bhasher.spider.player.SpiderPlayer;
@@ -18,7 +17,7 @@ public class SpeedHack {
 		}
 
 		// Player is flying or is riptiding or is gliding.
-		if(sp.getPlayer().isFlying() || sp.getPlayer().isRiptiding() || sp.getPlayer().isGliding()){
+		if(sp.getPlayer().isFlying() || sp.getPlayer().isRiptiding() || sp.getPlayer().isGliding() || sp.getPlayer().getVehicle() != null){
 			return;
 		}
 
@@ -27,8 +26,20 @@ public class SpeedHack {
 
 		final double max_horizontal_distance = PlayerMove.getHorizontalSpeed(sp.getPlayer())/20* PlayerRunnable.TICK_RATE;
 
-		if(horizontal_move > max_horizontal_distance* SpiderConfig.getTolerance()){
-			sp.alert(AlertType.SPEEDHACK, Format.round(horizontal_move, 2) + ", " + Format.round((horizontal_move/max_horizontal_distance)*100, 2) + "%");
+		final double ratio = (horizontal_move/max_horizontal_distance);
+
+		if(ratio > 0.5){
+			sp.speedhackScore += Math.max((ratio-1), 0)*PlayerRunnable.TICK_RATE;
+			sp.speedhackScore -= 0.1*PlayerRunnable.TICK_RATE;
+			if(sp.speedhackScore < 0) {
+				sp.speedhackScore = 0;
+			}
+		}
+
+		if(ratio > 1.01){
+
+			sp.alert(AlertType.SPEEDHACK, "score: " + Format.round(sp.speedhackScore, 2) + ", ratio: " + Format.round(ratio*100,2) + "%");
+
 		}
 
 	}
