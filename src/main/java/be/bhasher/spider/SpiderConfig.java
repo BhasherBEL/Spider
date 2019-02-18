@@ -6,11 +6,11 @@ package be.bhasher.spider;
 public class SpiderConfig {
 
 	/**
-	 * Get the tolerance from the config file.
-	 * @return the tolerance.
+	 * Check if it is necessary to use the walkspeed.
+	 * @return if using walkspeed.
 	 */
-	public static Double getTolerance(){
-		return Spider.getInstance().getConfig().getDouble("cheat.tolerance");
+	public static boolean isUsingWalkSpeed(){
+		return Spider.getInstance().getConfig().getBoolean("cheat.speedhack.usingwalkspeed");
 	}
 
 }

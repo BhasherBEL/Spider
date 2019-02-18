@@ -85,6 +85,7 @@ public class SpiderPlayer {
 
 	/**
 	 * Remove a {@link Player} in the spiderPlayers list.
+	 * @param player The {@link Player}.
 	 */
 	public static void remove(final Player player){
 		spiderPlayers.remove(player);

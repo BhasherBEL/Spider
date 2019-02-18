@@ -5,6 +5,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import be.bhasher.spider.SpiderConfig;
+
 /**
  * Class managing the player's movements.
  */
@@ -28,8 +30,13 @@ public class PlayerMove {
 	 */
 	private static final double WALK_SPEED = 4.317;
 
+	/**
+	 * Get the horizontal max speed for a {@link Player}.
+	 * @param player The {@link Player}.
+	 * @return the horizontal max speed.
+	 */
 	public static double getHorizontalSpeed(final Player player) {
-		return getBaseHorizontalSpeedOnState(player) * getPotionBoost(player);
+		return getBaseHorizontalSpeedOnState(player) * getPotionBoost(player) * (SpiderConfig.isUsingWalkSpeed() ? player.getWalkSpeed()*5 : 1);
 	}
 
 	/**
@@ -56,9 +63,9 @@ public class PlayerMove {
 		double result = 1.;
 		for (final PotionEffect effect : player.getActivePotionEffects()) {
 			if (effect.getType().equals(PotionEffectType.SPEED)) {
-				result += 0.2 * effect.getAmplifier();
+				result += 0.2 * (effect.getAmplifier()+1);
 			} else if (effect.getType().equals(PotionEffectType.SLOW)){
-				result -= 0.15 * effect.getAmplifier();
+				result -= 0.15 * (effect.getAmplifier()+1);
 			}
 		}
 		return result;

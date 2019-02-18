@@ -5,6 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import be.bhasher.spider.SpiderConfig;
+
 /**
  * Class of the walkspeed command (or ws).
  */
@@ -40,6 +42,11 @@ public class WalkSpeedCommand implements CommandExecutor {
 			return false;
 		}
 		p.setWalkSpeed(walkspeed);
+
+		if(SpiderConfig.isUsingWalkSpeed()){
+			p.sendMessage("§c§lWARNING§c: §lcheat.speedhack.usingwalkspeed §cis to §ltrue§c. The effects of walkspeed are not taken into account.");
+		}
+
 		p.sendMessage("§c[§3Spider§c] §3Walkspeed défini à " + args[0]);
 
 		return true ;
