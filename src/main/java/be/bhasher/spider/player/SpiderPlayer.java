@@ -112,7 +112,7 @@ public class SpiderPlayer {
 	}
 
 	/**
-	 * Get the {@link AlertForce} according to the speedhackScore.
+	 * Get the {@link AlertForce} according to the speed hack score.
 	 * @return the {@link AlertForce}.
 	 */
 	public AlertForce getSpeedHackForce(){
@@ -152,6 +152,9 @@ public class SpiderPlayer {
 		}
 	}
 
+	/**
+	 * @return If the player has moved between the two positions.
+	 */
 	public boolean hasMoved(){
 		return PlayerMove.hasMoved(location, lastLocation);
 	}

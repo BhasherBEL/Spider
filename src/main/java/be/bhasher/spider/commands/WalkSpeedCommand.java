@@ -5,8 +5,19 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+/**
+ * Class of the walkspeed command (or ws).
+ */
 public class WalkSpeedCommand implements CommandExecutor {
 
+	/**
+	 * Called when the walkspeed (or ws) command is executed. Redefine the player's walkspeed according to the first argument.
+	 * @param sender The {@link CommandSender}.
+	 * @param cmd The {@link Command}.
+	 * @param label The label.
+	 * @param args The arguments.
+	 * @return if the command has been correctly executed.
+	 */
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args){
 		if (!(sender instanceof Player)) {

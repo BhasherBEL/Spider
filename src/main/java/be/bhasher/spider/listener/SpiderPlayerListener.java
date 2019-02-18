@@ -8,6 +8,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import be.bhasher.spider.player.SpiderPlayer;
 
+/**
+ * Events related to the {@link SpiderPlayer}.
+ */
 public class SpiderPlayerListener implements Listener {
 
 	/**

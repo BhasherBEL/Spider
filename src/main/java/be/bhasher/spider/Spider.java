@@ -7,12 +7,15 @@ import be.bhasher.spider.commands.WalkSpeedCommand;
 import be.bhasher.spider.listener.SpiderPlayerListener;
 import be.bhasher.spider.player.SpiderPlayer;
 
+/**
+ * Main class of the plugin.
+ */
 public class Spider extends JavaPlugin {
 
 	private static Plugin 		instance;
 
 	/**
-	 * Execute the launch.
+	 * Execute the plugin.
 	 */
 	@Override
 	public void onEnable() {

@@ -6,17 +6,31 @@ import org.bukkit.scheduler.BukkitTask;
 import be.bhasher.spider.Spider;
 import be.bhasher.spider.cheats.SpeedHack;
 
+/**
+ * Runnable of a {@link SpiderPlayer}. Performs cheat checks.
+ */
 public class PlayerRunnable implements Runnable{
 
+	/**
+	 * Ticks between two executions.
+	 */
 	public static final int 	TICK_RATE = 1;
+
 	private final SpiderPlayer	sp;
 	private final BukkitTask	task;
 
+	/**
+	 * Initializes and starts the runnable and starts the checks.
+	 * @param sp The {@link SpiderPlayer}.
+	 */
 	public PlayerRunnable(final SpiderPlayer sp){
 		this.sp = sp;
 		this.task = Bukkit.getScheduler().runTaskTimer(Spider.getInstance(), this, 0, TICK_RATE);
 	}
 
+	/**
+	 * Performed every {@value TICK_RATE} ticks.
+	 */
 	@Override
 	public void run() {
 

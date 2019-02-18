@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
 
+/**
+ * Class managing a player's equipment.
+ */
 public class PlayerEquipment {
 
 	/**

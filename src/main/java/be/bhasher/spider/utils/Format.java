@@ -1,5 +1,8 @@
 package be.bhasher.spider.utils;
 
+/**
+ * Class managing formatting.
+ */
 public class Format {
 
 	/**

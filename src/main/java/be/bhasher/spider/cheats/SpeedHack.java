@@ -8,8 +8,15 @@ import be.bhasher.spider.player.SpiderPlayer;
 import be.bhasher.spider.utils.Format;
 import be.bhasher.spider.utils.player.PlayerMove;
 
+/**
+ * Manages the speed hack check.
+ */
 public class SpeedHack {
 
+	/**
+	 * Performs speekhack verification.
+	 * @param sp The {@link SpiderPlayer}.
+	 */
 	public SpeedHack(final SpiderPlayer sp){
 		// Player has not moved.
 		if(!sp.hasMoved()) {

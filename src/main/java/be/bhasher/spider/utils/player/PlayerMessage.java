@@ -5,6 +5,9 @@ import org.bukkit.entity.Player;
 
 import be.bhasher.spider.SpiderPermission;
 
+/**
+ * Class managing messages to players.
+ */
 public class PlayerMessage {
 
 	/**
