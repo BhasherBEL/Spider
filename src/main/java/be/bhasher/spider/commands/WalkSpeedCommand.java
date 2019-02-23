@@ -1,5 +1,6 @@
 package be.bhasher.spider.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,15 +27,32 @@ public class WalkSpeedCommand implements CommandExecutor {
 			return false;
 		}
 
-		if(args.length != 1){
+		if(args.length == 0 || args.length > 2){
 			return false;
 		}
 
-		final Player p = (Player) sender;
+		Player p = null;
+		final String newWalkspeed;
+
+		if(args.length == 2){
+			newWalkspeed = args[1];
+			for(final Player player : Bukkit.getOnlinePlayers()){
+				if(player.getName().equals(args[0])){
+					p = player;
+					break;
+				}
+			}
+			if(p == null){
+				return false ;
+			}
+		}else{
+			p = (Player) sender;
+			newWalkspeed = args[0];
+		}
 
 		final float walkspeed;
 		try {
-			walkspeed = Float.parseFloat(args[0]);
+			walkspeed = Float.parseFloat(newWalkspeed);
 		} catch (final NumberFormatException ex) {
 			return false;
 		}
@@ -47,7 +65,7 @@ public class WalkSpeedCommand implements CommandExecutor {
 			p.sendMessage("§c§lWARNING§c: §lcheat.speedhack.usingwalkspeed §cis to §ltrue§c. The effects of walkspeed are not taken into account.");
 		}
 
-		p.sendMessage("§c[§3Spider§c] §3Walkspeed défini à " + args[0]);
+		sender.sendMessage("§c[§3Spider§c] §3Walkspeed défini à " + newWalkspeed + " §7§o(" + walkspeed*500 + "%)");
 
 		return true ;
 	}

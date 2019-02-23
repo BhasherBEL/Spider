@@ -7,8 +7,15 @@ author: Bhasher
 
 commands:
   walkspeed:
-    description: Modifie le walkspeed du joueur pour tester l'antispeedhack.
-    usage: /walkspeed <new walkspeed>
+    description: Change the player's walkspeed to test the antispeedhack.
+    usage: "§cSyntax error! §f/walkspeed [player] <new walkspeed>"
     permission: spider.command.walkspeed
     aliases:
       - ws
+
+  prevent:
+    description: Warn a player.
+    usage: "§cSyntax error! §ftype /prevent help for more information."
+    permission: spider.command.prevent
+    aliases:
+      - pv

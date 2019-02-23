@@ -5,7 +5,9 @@ package be.bhasher.spider;
  */
 public enum SpiderPermission {
 
-	PREVENT_ALERT("spider.alert.prevent");
+	PREVENT_ALERT("spider.alert.prevent"),
+	NO_AUTO_BAN("spider.punishment.noautoban"),
+	SEE_REASON("spider.punishment.seereason");
 
 	private final String permission;
 

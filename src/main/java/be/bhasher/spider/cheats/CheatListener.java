@@ -1,13 +1,14 @@
 package be.bhasher.spider.cheats;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerVelocityEvent;
 
 import be.bhasher.spider.alerts.AlertForce;
 import be.bhasher.spider.player.SpiderPlayer;
+import be.bhasher.spider.utils.player.PlayerPunishment;
 
 /**
  * Event related to cheats
@@ -23,8 +24,19 @@ public class CheatListener implements Listener {
 		final Player player = event.getPlayer();
 		final SpiderPlayer sp = SpiderPlayer.get(player);
 		if(sp.getSpeedHackForce() == AlertForce.CRITICAL){
-			Bukkit.broadcastMessage("§c[§3Spider§c]§f " + player.getName() + " was banned for disconnecting when he was suspected of cheating.");
+			PlayerPunishment.banPlayer(sp, "disconnecting when he was suspected of speedhacking");
 		}
+	}
+
+	/**
+	 * Analyzes the change of the player's velocity
+	 * @param event a {@link PlayerVelocityEvent}.
+	 */
+	@EventHandler
+	public void onPlayerChangeVelocity(final PlayerVelocityEvent event){
+		final Player player = event.getPlayer();
+		final SpiderPlayer sp = SpiderPlayer.get(player);
+		sp.velocity = event.getVelocity();
 	}
 
 }

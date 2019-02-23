@@ -14,7 +14,7 @@ public class PlayerRunnable implements Runnable{
 	/**
 	 * Ticks between two executions.
 	 */
-	public static final int 	TICK_RATE = 1;
+	public static final int 	TICK_RATE = 5;
 
 	private final SpiderPlayer	sp;
 	private final BukkitTask	task;
@@ -42,9 +42,13 @@ public class PlayerRunnable implements Runnable{
 		sp.location = sp.getPlayer().getLocation();
 		if(sp.getPlayer().isOnGround()){
 			sp.groundY = sp.location.getY();
-			sp.groundTime++;
+			sp.groundTime+=TICK_RATE;
 		}else{
-			sp.groundTime = 0;
+			if(sp.getPlayer().isFlying()){
+				sp.groundTime = -20/TICK_RATE;
+			}else if(sp.groundTime > 0){
+				sp.groundTime = 0;
+			}
 		}
 
 		new SpeedHack(sp);

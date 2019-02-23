@@ -7,11 +7,14 @@ import be.bhasher.spider.player.PlayerRunnable;
 import be.bhasher.spider.player.SpiderPlayer;
 import be.bhasher.spider.utils.Format;
 import be.bhasher.spider.utils.player.PlayerMove;
+import be.bhasher.spider.utils.player.PlayerPunishment;
 
 /**
  * Manages the speed hack check.
  */
 public class SpeedHack {
+
+	// Flag the player with teleport and respawn flag.
 
 	/**
 	 * Performs speekhack verification.
@@ -37,7 +40,7 @@ public class SpeedHack {
 
 			double max_horizontal_distance = PlayerMove.getHorizontalSpeed(sp.getPlayer())/20* PlayerRunnable.TICK_RATE;
 
-			if(sp.groundTime <= 4){
+			if(sp.groundTime <= 20){
 				max_horizontal_distance *= 1.2;
 			}
 
@@ -55,6 +58,10 @@ public class SpeedHack {
 
 				sp.alert(AlertType.SPEEDHACK, "score: " + Format.round(sp.speedhackScore, 2) + ", ratio: " + Format.round(ratio*100,2) + "%");
 
+			}
+
+			if(sp.speedhackScore > 5000){
+				PlayerPunishment.autoBanPlayer(sp, "SpeedHack");
 			}
 
 		}

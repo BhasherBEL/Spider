@@ -6,6 +6,7 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
 import be.bhasher.spider.SpiderPermission;
 import be.bhasher.spider.alerts.AlertForce;
@@ -26,10 +27,13 @@ public class SpiderPlayer {
 
 	private final Player player;
 
+	public boolean isSpiderBan = false;
+
 	public Location lastLocation;
 	public Location location;
 	public double groundY;
 	public double groundTime;
+	public Vector velocity;
 	public double speedhackScore = 0;
 
 	/**
@@ -98,6 +102,10 @@ public class SpiderPlayer {
 	public Player getPlayer(){
 		return player;
 	}
+
+	/*public int getPing(final Player player){
+
+	}*/
 
 	/**
 	 * @return a clone of the location.
