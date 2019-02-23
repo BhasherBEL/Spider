@@ -8,6 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import be.bhasher.spider.SpiderConfig;
 import be.bhasher.spider.SpiderPermission;
 import be.bhasher.spider.alerts.AlertForce;
 import be.bhasher.spider.alerts.AlertType;
@@ -157,9 +158,9 @@ public class SpiderPlayer {
 	 * @param text Extra content of your alert.
 	 */
 	public void alert(final AlertType type, final AlertForce force, final Object text){
-		//if(force != AlertForce.NONE) {
+		if(SpiderConfig.isDebugMode() || force != AlertForce.NONE) {
 			PlayerMessage.sendMessageWithPermission(SpiderPermission.PREVENT_ALERT, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
-		//}
+		}
 	}
 
 	/**

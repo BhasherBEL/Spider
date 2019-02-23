@@ -24,7 +24,7 @@ public class CheatListener implements Listener {
 		final Player player = event.getPlayer();
 		final SpiderPlayer sp = SpiderPlayer.get(player);
 		if(sp.getSpeedHackForce() == AlertForce.CRITICAL){
-			PlayerPunishment.banPlayer(sp, "disconnecting when he was suspected of speedhacking");
+			PlayerPunishment.autoBanPlayer(sp, "disconnecting when he was suspected of speedhacking");
 		}
 	}
 
