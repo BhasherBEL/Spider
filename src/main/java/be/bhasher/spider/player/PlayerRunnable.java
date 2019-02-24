@@ -39,6 +39,8 @@ public class PlayerRunnable implements Runnable{
 			task.cancel();
 		}
 
+		sp.pd.setAll();
+
 		sp.location = sp.getPlayer().getLocation();
 		if(sp.getPlayer().isOnGround()){
 			sp.groundY = sp.location.getY();
@@ -49,6 +51,10 @@ public class PlayerRunnable implements Runnable{
 			}else if(sp.groundTime > 0){
 				sp.groundTime = 0;
 			}
+		}
+
+		if(sp.hasMoved()){
+			sp.getPlayer().sendMessage(sp.pd.isInLiquid() ? "§2Oui" : "§cNon");
 		}
 
 		new SpeedHack(sp);

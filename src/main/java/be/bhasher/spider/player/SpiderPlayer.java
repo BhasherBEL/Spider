@@ -27,6 +27,7 @@ public class SpiderPlayer {
 	private static final Map<Player, SpiderPlayer> spiderPlayers = new HashMap<>();
 
 	private final Player player;
+	public final PlayerData pd;
 
 	public boolean isSpiderBan = false;
 
@@ -44,6 +45,7 @@ public class SpiderPlayer {
 	private SpiderPlayer(final Player player){
 		this.player = player;
 		this.lastLocation = player.getLocation();
+		this.pd = new PlayerData(player);
 	}
 
 	/**
