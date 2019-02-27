@@ -47,7 +47,7 @@ public class PlayerRunnable implements Runnable{
 			sp.groundTime+=TICK_RATE;
 		}else{
 			if(sp.getPlayer().isFlying()){
-				sp.groundTime = -20/TICK_RATE;
+				sp.groundTime = Math.round(-20./TICK_RATE);
 			}else if(sp.groundTime > 0){
 				sp.groundTime = 0;
 			}

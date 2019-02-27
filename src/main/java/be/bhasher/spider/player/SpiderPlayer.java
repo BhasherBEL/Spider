@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.craftbukkit.v1_13_R2.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
@@ -106,9 +107,12 @@ public class SpiderPlayer {
 		return player;
 	}
 
-	/*public int getPing(final Player player){
-
-	}*/
+	/**
+	 * @return the {@link Player} ping.
+	 */
+	public int getPing(){
+		return ((CraftPlayer)getPlayer()).getHandle().ping;
+	}
 
 	/**
 	 * @return a clone of the location.

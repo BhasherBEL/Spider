@@ -5,6 +5,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import be.bhasher.spider.utils.block.BlockNature;
 import be.bhasher.spider.utils.block.BlockUtils;
 
 public class PlayerData {
@@ -55,9 +56,23 @@ public class PlayerData {
 	}
 
 	private void setInLiquid() {
-		if(BlockUtils.isLiquid(block) || BlockUtils.isLiquid(player.getEyeLocation().getBlock())){
+		if(BlockNature.isLiquid(block) || BlockNature.isLiquid(player.getEyeLocation().getBlock())){
 			inLiquid = true;
 			return ;
+		}
+		for(int x=-1;x<=1;x++){
+			for(int y=0;y<=1;y++){
+				for(int z=-1;z<=1;z++){
+					if(BlockNature.isLiquid(location.clone().add(x,y,z).getBlock())) {
+						final Block liquidAdjBlock = location.clone().add(x,y,z).getBlock();
+						final Vector componentDist = BlockUtils.getComponentDistance(liquidAdjBlock, location);
+						if(componentDist.getX() < .2 && componentDist.getZ() < .2){
+							inLiquid = true;
+							return;
+						}
+					}
+				}
+			}
 		}
 		inLiquid = false;
 	}
