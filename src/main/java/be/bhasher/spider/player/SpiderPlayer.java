@@ -39,6 +39,7 @@ public class SpiderPlayer {
 	public double groundTime;
 	public Vector velocity;
 	public double speedhackScore = 0;
+	public boolean hasBeenStatic = false ;
 
 	/**
 	 * Initializes a new {@link SpiderPlayer}.

@@ -62,7 +62,7 @@ public class WalkSpeedCommand implements CommandExecutor {
 		p.setWalkSpeed(walkspeed);
 
 		if(SpiderConfig.isUsingWalkSpeed()){
-			p.sendMessage("§c§lWARNING§c: §lcheat.speedhack.usingwalkspeed §cis to §ltrue§c. The effects of walkspeed are not taken into account.");
+			p.sendMessage("§c§lWARNING§c: §lcheat.speedhack.usingwalkspeed §cis to §ltrue§c. The effects of walkspeed are taken into account.");
 		}
 
 		sender.sendMessage("§c[§3Spider§c] §3Walkspeed défini à " + newWalkspeed + " §7§o(" + walkspeed*500 + "%)");

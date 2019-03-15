@@ -32,6 +32,9 @@ public class SpeedHack extends Cheat {
 
 		// Player has not moved.
 		if(!sp.hasMoved()) {
+			if(!sp.hasBeenStatic) {
+				sp.hasBeenStatic = true;
+			}
 			return;
 		}
 
@@ -46,11 +49,17 @@ public class SpeedHack extends Cheat {
 				max_horizontal_distance *= 1.2;
 			}
 
-			final double ratio = (horizontal_move/max_horizontal_distance);
+			double ratio = (horizontal_move/max_horizontal_distance);
+
+			if(ratio > 1.02 && sp.hasBeenStatic){
+				sp.hasBeenStatic = false;
+				sp.getPlayer().sendMessage("Static use !");
+				ratio /= 2 ;
+			}
 
 			if(ratio > 0.5){
 				sp.speedhackScore += Math.max((ratio-1), 0)*PlayerRunnable.TICK_RATE;
-				sp.speedhackScore -= 0.1* PlayerRunnable.TICK_RATE;
+				sp.speedhackScore -= 0.04* PlayerRunnable.TICK_RATE;
 				if(sp.speedhackScore < 0) {
 					sp.speedhackScore = 0;
 				}
