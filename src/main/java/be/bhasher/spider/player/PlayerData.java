@@ -28,7 +28,7 @@ public class PlayerData {
 		this.player = player;
 	}
 
-	public void setAll() {
+	public void update() {
 		location = player.getLocation() ;
 		block = location.getBlock() ;
 		setOnGround();

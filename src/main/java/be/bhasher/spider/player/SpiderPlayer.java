@@ -34,6 +34,7 @@ public class SpiderPlayer {
 
 	public Location lastLocation;
 	public Location location;
+	public Vector move;
 	public double groundY;
 	public double groundTime;
 	public Vector velocity;
@@ -128,6 +129,22 @@ public class SpiderPlayer {
 		return lastLocation.clone();
 	}
 
+	public void initStart(){
+		pd.update();
+		location = getPlayer().getLocation();
+		move = location.toVector().subtract(lastLocation.toVector());
+		if(player.isOnGround()){
+			groundY = location.getY();
+			groundTime+=PlayerRunnable.TICK_RATE;
+		}else{
+			if(player.isFlying()){
+				groundTime = Math.round(-20./PlayerRunnable.TICK_RATE);
+			}else if(groundTime > 0){
+				groundTime = 0;
+			}
+		}
+	}
+
 	/**
 	 * Get the {@link AlertForce} according to the speed hack score.
 	 * @return the {@link AlertForce}.
@@ -164,7 +181,7 @@ public class SpiderPlayer {
 	 * @param text Extra content of your alert.
 	 */
 	public void alert(final AlertType type, final AlertForce force, final Object text){
-		if(SpiderConfig.isDebugMode() || force != AlertForce.NONE) {
+		if(SpiderConfig.isDebugMode() || true /*|| force != AlertForce.NONE*/) {
 			PlayerMessage.sendMessageWithPermission(SpiderPermission.PREVENT_ALERT, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
 		}
 	}
