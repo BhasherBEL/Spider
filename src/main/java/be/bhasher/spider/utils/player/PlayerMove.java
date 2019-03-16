@@ -1,11 +1,15 @@
 package be.bhasher.spider.utils.player;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import be.bhasher.spider.SpiderConfig;
+import be.bhasher.spider.utils.block.BlockNature;
+import be.bhasher.spider.utils.block.BlockUtils;
+import be.bhasher.spider.utils.data.MoveData;
 
 /**
  * Class managing the player's movements.
@@ -26,17 +30,12 @@ public class PlayerMove {
 	}
 
 	/**
-	 * Walk speed constant.
-	 */
-	private static final double WALK_SPEED = 4.317;
-
-	/**
 	 * Get the horizontal max speed for a {@link Player}.
 	 * @param player The {@link Player}.
 	 * @return the horizontal max speed.
 	 */
 	public static double getHorizontalSpeed(final Player player) {
-		return getBaseHorizontalSpeedOnState(player) * getPotionBoost(player) * (SpiderConfig.isUsingWalkSpeed() ? player.getWalkSpeed()*5 : 1);
+		return getBaseHorizontalSpeedOnState(player) * getPotionBoost(player) * getBlockBoost(player) * (SpiderConfig.isUsingWalkSpeed() ? player.getWalkSpeed()*5 : 1);
 	}
 
 	/**
@@ -46,12 +45,29 @@ public class PlayerMove {
 	 */
 	private static double getBaseHorizontalSpeedOnState(final Player player) {
 		if(player.isSprinting()) {
-			return WALK_SPEED*1.3;
+			if(BlockNature.isSolid(player.getLocation().add(0,2,0).getBlock())){
+				if((BlockNature.isTrapDoor(player.getLocation().getBlock())
+						|| BlockNature.isTrapDoor(player.getLocation().add(0,1,0).getBlock()))
+						&& BlockNature.isIce(player.getLocation().add(0,-1,0).getBlock())) {
+					return MoveData.WALK_SPEED * MoveData.ICE_TRAP_UP_BLOCK_BOOST;
+				}
+				return MoveData.WALK_SPEED * MoveData.UP_BLOCK_BOOST;
+			}
+			return MoveData.WALK_SPEED * MoveData.SPRINT_BOOST;
 		}
 		if(player.isSneaking()) {
-			return WALK_SPEED*0.3;
+			return MoveData.WALK_SPEED * MoveData.SNEAK_BOOST;
 		}
-		return WALK_SPEED;
+		return MoveData.WALK_SPEED;
+	}
+
+	private static double getBlockBoost(final Player player) {
+		if(player.getLocation().add(0,-1,0).getBlock().getType() == Material.SOUL_SAND){
+			if(player.getLocation().distance(BlockUtils.getFlatCenter(player.getLocation().getBlock())) < 0.2){
+				return MoveData.SOUL_SAND_BOOST;
+			}
+		}
+		return 1;
 	}
 
 	/**
@@ -63,9 +79,9 @@ public class PlayerMove {
 		double result = 1.;
 		for (final PotionEffect effect : player.getActivePotionEffects()) {
 			if (effect.getType().equals(PotionEffectType.SPEED)) {
-				result += 0.2 * (effect.getAmplifier()+1);
+				result += MoveData.POTION_SPEED_BOOST * (effect.getAmplifier()+1);
 			} else if (effect.getType().equals(PotionEffectType.SLOW)){
-				result -= result*0.15 * (effect.getAmplifier()+1);
+				result -= result * MoveData.POTION_SLOW_BOOST * (effect.getAmplifier()+1);
 			}
 		}
 		return result;

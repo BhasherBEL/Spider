@@ -58,7 +58,7 @@ public class SpeedHack extends Cheat {
 			}
 
 			if(ratio > 0.5){
-				sp.speedhackScore += Math.max((ratio-1), 0)*PlayerRunnable.TICK_RATE;
+				sp.speedhackScore += Math.min(Math.max((ratio-1), 0), 10)*PlayerRunnable.TICK_RATE;
 				sp.speedhackScore -= 0.04* PlayerRunnable.TICK_RATE;
 				if(sp.speedhackScore < 0) {
 					sp.speedhackScore = 0;
