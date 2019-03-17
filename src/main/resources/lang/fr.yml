@@ -1,0 +1,12 @@
+permission:
+  description:
+    spider: "Permissions générales pour le plugin Spider"
+    spider.prevent: "Permissions générales des sanctions"
+    spider.prevent.noautoban: "Ne pas pouvoir être banni automatiquement"
+    spider.check: "Permissions générales pour verifier un joueur"
+    spider.check.global: "Voir les détails de l'anticheat d'un joueur"
+    spider.check.speedhack: "Voir les détails de l'antispeedhack"
+    spider.alert: "Recevoir les alertes de l'anticheat"
+    spider.alert.speedhack: "Recevoir les alertes de speedhack"
+    spider.bypass: "Permissions générales pour le bypass des verifications"
+    spider.bypass.speedhack: "Bypass des verification du speedhack"

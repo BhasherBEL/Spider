@@ -16,6 +16,8 @@ import be.bhasher.spider.player.SpiderPlayer;
 public class Spider extends JavaPlugin {
 
 	private static Plugin 		instance;
+	private static final String	LANG = "fr";
+	public static SpiderLang langConfig;
 
 	/**
 	 * Execute the plugin.
@@ -24,6 +26,7 @@ public class Spider extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		instance = this;
+		langConfig = new SpiderLang(this, LANG);
 		SpiderPermission.spiderPermission.build();
 		SpiderPlayer.resetPlayers() ;
 		getCommand("walkspeed").setExecutor(new WalkSpeedCommand());
