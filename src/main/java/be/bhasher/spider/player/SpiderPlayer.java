@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import be.bhasher.spider.SpiderConfig;
-import be.bhasher.spider.SpiderPermission;
 import be.bhasher.spider.alerts.AlertForce;
 import be.bhasher.spider.alerts.AlertType;
+import be.bhasher.spider.permission.SpiderPermission;
 import be.bhasher.spider.utils.player.PlayerMessage;
 import be.bhasher.spider.utils.player.PlayerMove;
 
@@ -172,7 +172,7 @@ public class SpiderPlayer {
 	 * @param text Extra content of your alert.
 	 */
 	public void alert(final AlertType type, final Object text){
-		alert(type, getSpeedHackForce(), text);
+		alert(type, getSpeedHackForce(), text.toString());
 	}
 
 	/**
@@ -183,7 +183,7 @@ public class SpiderPlayer {
 	 */
 	public void alert(final AlertType type, final AlertForce force, final Object text){
 		if(SpiderConfig.isDebugMode() || true /*|| force != AlertForce.NONE*/) {
-			PlayerMessage.sendMessageWithPermission(SpiderPermission.PREVENT_ALERT, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
+			PlayerMessage.sendMessageWithPermission(SpiderPermission.alertPermission, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
 		}
 	}
 

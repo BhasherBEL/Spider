@@ -9,7 +9,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.inventory.meta.FireworkMeta;
 
-import be.bhasher.spider.SpiderPermission;
+import be.bhasher.spider.permission.SpiderPermission;
 import be.bhasher.spider.player.SpiderPlayer;
 
 public class PlayerPunishment {
@@ -23,7 +23,7 @@ public class PlayerPunishment {
 	}
 
 	public static void autoBanPlayer(final SpiderPlayer sp, final String reason, final String message){
-		if(!sp.getPlayer().hasPermission(SpiderPermission.NO_AUTO_BAN.getPermission())){
+		if(!sp.getPlayer().hasPermission(SpiderPermission.preventNoAutoBanPermission.getPermission())){
 			banPlayer(sp, reason, message);
 		}
 	}

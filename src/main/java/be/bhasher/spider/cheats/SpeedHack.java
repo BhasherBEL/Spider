@@ -53,7 +53,6 @@ public class SpeedHack extends Cheat {
 
 			if(ratio > 1.02 && sp.hasBeenStatic){
 				sp.hasBeenStatic = false;
-				sp.getPlayer().sendMessage("Static use !");
 				ratio /= 2 ;
 			}
 

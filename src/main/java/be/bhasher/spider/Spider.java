@@ -7,6 +7,7 @@ import be.bhasher.spider.cheats.CheatListener;
 import be.bhasher.spider.commands.PreventCommand;
 import be.bhasher.spider.commands.WalkSpeedCommand;
 import be.bhasher.spider.listener.SpiderPlayerListener;
+import be.bhasher.spider.permission.SpiderPermission;
 import be.bhasher.spider.player.SpiderPlayer;
 
 /**
@@ -23,6 +24,7 @@ public class Spider extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		instance = this;
+		SpiderPermission.spiderPermission.build();
 		SpiderPlayer.resetPlayers() ;
 		getCommand("walkspeed").setExecutor(new WalkSpeedCommand());
 		getCommand("prevent").setExecutor(new PreventCommand());
