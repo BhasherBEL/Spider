@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 
 import be.bhasher.spider.Spider;
+import be.bhasher.spider.SpiderConfig;
 import net.minecraft.server.v1_13_R2.v1_13_R2.MinecraftServer;
 
 /**
@@ -17,6 +18,8 @@ public class PlayerRunnable implements Runnable{
 	public static final int 	TICK_RATE = 1;
 	public static int tick = MinecraftServer.currentTick;
 	public static int lastTick = tick;
+
+	private int timeFromLastCheck = 0;
 
 	private final SpiderPlayer	sp;
 	private final BukkitTask	task;
@@ -36,6 +39,11 @@ public class PlayerRunnable implements Runnable{
 	@Override
 	public void run() {
 
+		if(timeFromLastCheck >= SpiderConfig.getCheckTime()/TICK_RATE*20){
+			sp.speedHack.preventTest();
+			timeFromLastCheck = 0;
+		}
+
 		tick = MinecraftServer.currentTick;
 
 		// Player online
@@ -49,6 +57,8 @@ public class PlayerRunnable implements Runnable{
 		sp.lastLocation = sp.location;
 
 		lastTick = tick;
+
+		timeFromLastCheck++;
 
 	}
 

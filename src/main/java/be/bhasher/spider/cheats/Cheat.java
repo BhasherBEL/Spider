@@ -39,12 +39,12 @@ public abstract class Cheat {
 			for(final Detection oldDetection : previous){
 				if(oldDetection.getType() == cheatType
 						&& getLevel(oldDetection.getScore()) != CheatLevel.NONE
-						&& oldDetection.getTime()+SpiderConfig.getCheckTime()*1000 <= System.currentTimeMillis()){
+						&& oldDetection.getTime()+SpiderConfig.getCheckTime()*1000 >= System.currentTimeMillis()){
 					i+=1;
 				}
 			}
 			if(i>0){
-				PlayerMessage.sendMessageWithPermission(SpiderPermission.alertPermission, Spider.HEADER + " " + getLevel().getColor() + sp.getPlayer().getName() + ": " + cheatType.getName() + " " + "(" + getLevel().getName().toUpperCase() + "x" + i + ")");
+				PlayerMessage.sendMessageWithPermission(SpiderPermission.alertPermission, Spider.HEADER + " " + getLevel().getColor() + sp.getPlayer().getName() + ": " + cheatType.getName() + " " + "(" + getLevel().getName().toUpperCase() + "x" + i + "/" + Math.round(score) + ")");
 			}
 		}
 	}
