@@ -1,23 +1,24 @@
 package be.bhasher.spider.cheats;
 
-import be.bhasher.spider.alerts.AlertType;
+import be.bhasher.spider.alerts.CheatType;
 import be.bhasher.spider.player.PlayerRunnable;
 import be.bhasher.spider.player.SpiderPlayer;
-import be.bhasher.spider.utils.Format;
 import be.bhasher.spider.utils.player.PlayerMove;
-import be.bhasher.spider.utils.player.PlayerPunishment;
 
 /**
  * Manages the speed hack check.
  */
 public class SpeedHack extends Cheat {
 
+	public double groundY;
+	public double groundTime;
+
 	/**
 	 * Performs speekhack verification.
 	 * @param sp The {@link SpiderPlayer}.
 	 */
 	public SpeedHack(final SpiderPlayer sp){
-		super(sp, AlertType.SPEEDHACK);
+		super(sp, CheatType.SPEEDHACK);
 
 	}
 
@@ -30,6 +31,17 @@ public class SpeedHack extends Cheat {
 	public void update() {
 		super.update();
 
+		if(sp.getPlayer().isOnGround()){
+			groundY = sp.location.getY();
+			groundTime+= PlayerRunnable.TICK_RATE;
+		}else{
+			if(sp.getPlayer().isFlying()){
+				groundTime = Math.round(-20./PlayerRunnable.TICK_RATE);
+			}else if(groundTime > 0){
+				groundTime = 0;
+			}
+		}
+
 		// Player has not moved.
 		if(!sp.hasMoved() || sp.getPlayer().isRiptiding()) {
 			if(!sp.hasBeenStatic) {
@@ -39,13 +51,13 @@ public class SpeedHack extends Cheat {
 		}
 
 		// If move is only horizontal
-		if(sp.groundTime > 0){
+		if(groundTime > 0){
 
 			final double horizontal_move = sp.move.clone().setY(0).length();
 
 			double max_horizontal_distance = PlayerMove.getHorizontalSpeed(sp.getPlayer())/20* PlayerRunnable.TICK_RATE;
 
-			if(sp.groundTime <= 20){
+			if(groundTime <= 20){
 				max_horizontal_distance *= 1.2;
 			}
 
@@ -57,21 +69,15 @@ public class SpeedHack extends Cheat {
 			}
 
 			if(ratio > 0.5){
-				sp.speedhackScore += Math.min(Math.max((ratio-1), 0), 10)*PlayerRunnable.TICK_RATE;
-				sp.speedhackScore -= 0.04* PlayerRunnable.TICK_RATE;
-				if(sp.speedhackScore < 0) {
-					sp.speedhackScore = 0;
+				score += Math.min(Math.max((ratio-1), 0), 10)*PlayerRunnable.TICK_RATE;
+				score -= 0.04* PlayerRunnable.TICK_RATE;
+				if(score < 0) {
+					score = 0;
 				}
 			}
 
-			if(true){
-
-				super.prevent(new Detection(AlertType.SPEEDHACK, sp.speedhackScore), (ratio > 1.01 ? "§c":"") + " Move: " + Format.round(horizontal_move*20/PlayerRunnable.TICK_RATE, 2) + ", tick passed: " + (PlayerRunnable.tick-PlayerRunnable.lastTick));
-
-			}
-
-			if(sp.speedhackScore > 5000){
-				PlayerPunishment.autoBanPlayer(sp, "SpeedHack");
+			if(ratio > 1.05){
+				addDetection(new Detection(CheatType.SPEEDHACK, score));
 			}
 
 		}

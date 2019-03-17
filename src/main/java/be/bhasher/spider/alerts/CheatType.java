@@ -3,7 +3,7 @@ package be.bhasher.spider.alerts;
 /**
  * List of possible alerts to send against a {@link org.bukkit.entity.Player}.
  */
-public enum AlertType {
+public enum CheatType {
 
 	FLY("Fly"),
 	HIGH_UMP("High Jump"),
@@ -12,10 +12,10 @@ public enum AlertType {
 	private final String name;
 
 	/**
-	 * Setup AlertType.
+	 * Setup CheatType.
 	 * @param name The name of the alert.
 	 */
-	AlertType(final String name){
+	CheatType(final String name){
 		this.name = name;
 	}
 

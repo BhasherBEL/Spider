@@ -18,6 +18,7 @@ public class Spider extends JavaPlugin {
 	private static Plugin 		instance;
 	private static final String	LANG = "fr";
 	public static SpiderLang langConfig;
+	public static final String HEADER = "§c[§3Spider§c]§f";
 
 	/**
 	 * Execute the plugin.

@@ -2,18 +2,23 @@ package be.bhasher.spider.cheats;
 
 import java.util.ArrayList;
 
-import be.bhasher.spider.alerts.AlertType;
+import be.bhasher.spider.Spider;
+import be.bhasher.spider.SpiderConfig;
+import be.bhasher.spider.alerts.CheatLevel;
+import be.bhasher.spider.alerts.CheatType;
+import be.bhasher.spider.permission.SpiderPermission;
 import be.bhasher.spider.player.SpiderPlayer;
-import be.bhasher.spider.utils.Format;
+import be.bhasher.spider.utils.player.PlayerMessage;
 
 public abstract class Cheat {
 
-	protected final AlertType alertType;
+	protected final CheatType cheatType;
 	protected final SpiderPlayer sp;
 	protected final ArrayList<Detection> previous;
+	public double score = 0;
 
-	public Cheat(final SpiderPlayer sp, final AlertType alertType){
-		this.alertType = alertType;
+	public Cheat(final SpiderPlayer sp, final CheatType cheatType){
+		this.cheatType = cheatType;
 		this.previous = new ArrayList<>();
 		this.sp = sp;
 	}
@@ -22,17 +27,51 @@ public abstract class Cheat {
 		previous.add(newDetection);
 	}
 
-	protected void prevent(final Detection newDetection){
-		preventP(newDetection,"");
+	/**
+	 * Send a spider alert to the staff.
+	 */
+	public void preventTest(){
+		if(score > 5000){
+			//PlayerPunishment.autoBanPlayer(sp, cheatType.getName());
+		}
+		if(getLevel() != CheatLevel.NONE){
+			int i = 0;
+			for(final Detection oldDetection : previous){
+				if(oldDetection.getType() == cheatType
+						&& getLevel(oldDetection.getScore()) != CheatLevel.NONE
+						&& oldDetection.getTime()+SpiderConfig.getCheckTime()*1000 <= System.currentTimeMillis()){
+					i+=1;
+				}
+			}
+			if(i>0){
+				PlayerMessage.sendMessageWithPermission(SpiderPermission.alertPermission, Spider.HEADER + " " + getLevel().getColor() + sp.getPlayer().getName() + ": " + cheatType.getName() + " " + "(" + getLevel().getName().toUpperCase() + "x" + i + ")");
+			}
+		}
 	}
 
-	protected void prevent(final Detection newDetection, final String text){
-		preventP(newDetection,", " + text);
+	/**
+	 * Get the {@link CheatLevel}.
+	 * @return the {@link CheatLevel}.
+	 */
+	protected CheatLevel getLevel(){
+		return getLevel(score);
 	}
 
-	private void preventP(final Detection newDetection, final String text){
-		addDetection(newDetection);
-		sp.alert(newDetection.getType(), "score: " + Format.round(newDetection.getScore(), 2) + text);
+
+	private CheatLevel getLevel(final double score){
+		if(score > 2000){
+			return CheatLevel.CRITICAL;
+		}else if(score > 1000){
+			return CheatLevel.FLAGGED;
+		}else if(score > 500){
+			return CheatLevel.PROVEN;
+		}else if(score > 200){
+			return CheatLevel.SUSPECTED;
+		}else if(score > 100){
+			return CheatLevel.POTENTIAL;
+		}else{
+			return CheatLevel.NONE;
+		}
 	}
 
 	public void update(){

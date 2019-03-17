@@ -21,4 +21,12 @@ public class SpiderConfig {
 		return Spider.getInstance().getConfig().getBoolean("debug", false);
 	}
 
+	/**
+	 * Check if it is necessary to use the walkspeed.
+	 * @return if using walkspeed.
+	 */
+	public static int getCheckTime(){
+		return Spider.getInstance().getConfig().getInt("detection.time", 30);
+	}
+
 }

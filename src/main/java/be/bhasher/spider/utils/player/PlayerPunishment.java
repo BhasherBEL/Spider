@@ -29,9 +29,6 @@ public class PlayerPunishment {
 	}
 
 	public static void banPlayer(final SpiderPlayer sp, final String reason, final String message){
-		if(!sp.isSpiderBan){
-			sp.isSpiderBan = true;
-
 			final Firework f = (Firework) sp.getPlayer().getLocation().getWorld().spawnEntity(sp.getPlayer().getLocation(), EntityType.FIREWORK);
 			f.detonate();
 			final FireworkMeta fireworkMeta = f.getFireworkMeta();
@@ -57,8 +54,5 @@ public class PlayerPunishment {
 
 			Bukkit.getBanList(BanList.Type.NAME).addBan(sp.getPlayer().getName(), "§e" + reason, null, null);
 			sp.getPlayer().kickPlayer("§eYou §fhave been banned for §e" + reason + "§f.");
-
-		}
 	}
-
 }

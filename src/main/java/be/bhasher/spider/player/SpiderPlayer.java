@@ -9,11 +9,7 @@ import org.bukkit.craftbukkit.v1_13_R2.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import be.bhasher.spider.SpiderConfig;
-import be.bhasher.spider.alerts.AlertForce;
-import be.bhasher.spider.alerts.AlertType;
-import be.bhasher.spider.permission.SpiderPermission;
-import be.bhasher.spider.utils.player.PlayerMessage;
+import be.bhasher.spider.cheats.SpeedHack;
 import be.bhasher.spider.utils.player.PlayerMove;
 
 /**
@@ -30,16 +26,11 @@ public class SpiderPlayer {
 	private final Player player;
 	public final PlayerData pd;
 
-	public boolean isSpiderBan = false;
-
 	public Location lastLocation;
 	public Location location;
 	public Vector move;
-	public double groundY;
-	public double groundTime;
-	public Vector velocity;
-	public double speedhackScore = 0;
 	public boolean hasBeenStatic = false ;
+	public final SpeedHack speedHack;
 
 	/**
 	 * Initializes a new {@link SpiderPlayer}.
@@ -49,6 +40,7 @@ public class SpiderPlayer {
 		this.player = player;
 		this.lastLocation = player.getLocation();
 		this.pd = new PlayerData(player);
+		this.speedHack = new SpeedHack(this);
 	}
 
 	/**
@@ -134,57 +126,6 @@ public class SpiderPlayer {
 		pd.update();
 		location = getPlayer().getLocation();
 		move = location.toVector().subtract(lastLocation.toVector());
-		if(player.isOnGround()){
-			groundY = location.getY();
-			groundTime+=PlayerRunnable.TICK_RATE;
-		}else{
-			if(player.isFlying()){
-				groundTime = Math.round(-20./PlayerRunnable.TICK_RATE);
-			}else if(groundTime > 0){
-				groundTime = 0;
-			}
-		}
-	}
-
-	/**
-	 * Get the {@link AlertForce} according to the speed hack score.
-	 * @return the {@link AlertForce}.
-	 */
-	public AlertForce getSpeedHackForce(){
-		if(speedhackScore > 2000){
-			return AlertForce.CRITICAL;
-		}else if(speedhackScore > 1000){
-			return AlertForce.FLAGGED;
-		}else if(speedhackScore > 500){
-			return AlertForce.PROVEN;
-		}else if(speedhackScore > 200){
-			return AlertForce.SUSPECTED;
-		}else if(speedhackScore > 100){
-			return AlertForce.POTENTIAL;
-		}else{
-			return AlertForce.NONE;
-		}
-	}
-
-	/**
-	 * Send a spider alert to the {@link Player}.
-	 * @param type Type of your alert.
-	 * @param text Extra content of your alert.
-	 */
-	public void alert(final AlertType type, final Object text){
-		alert(type, getSpeedHackForce(), text.toString());
-	}
-
-	/**
-	 * Send a spider alert to the {@link Player}.
-	 * @param type Type of your alert.
-	 * @param force Force of your alert.
-	 * @param text Extra content of your alert.
-	 */
-	public void alert(final AlertType type, final AlertForce force, final Object text){
-		if(SpiderConfig.isDebugMode() || true /*|| force != AlertForce.NONE*/) {
-			PlayerMessage.sendMessageWithPermission(SpiderPermission.alertPermission, "§c[§3Spider§c] " + force.getColor() + force.getName() + " " + type.getName() + " §7§o(" + text.toString() + ")");
-		}
 	}
 
 	/**

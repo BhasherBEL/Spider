@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 
 import be.bhasher.spider.Spider;
-import be.bhasher.spider.cheats.SpeedHack;
 import net.minecraft.server.v1_13_R2.v1_13_R2.MinecraftServer;
 
 /**
@@ -21,7 +20,6 @@ public class PlayerRunnable implements Runnable{
 
 	private final SpiderPlayer	sp;
 	private final BukkitTask	task;
-	private final SpeedHack speedHack;
 
 	/**
 	 * Initializes and starts the runnable and starts the checks.
@@ -29,7 +27,6 @@ public class PlayerRunnable implements Runnable{
 	 */
 	public PlayerRunnable(final SpiderPlayer sp){
 		this.sp = sp;
-		this.speedHack = new SpeedHack(sp);
 		this.task = Bukkit.getScheduler().runTaskTimer(Spider.getInstance(), this, 0, TICK_RATE);
 	}
 
@@ -47,7 +44,7 @@ public class PlayerRunnable implements Runnable{
 		}
 		sp.initStart();
 
-		speedHack.update();
+		sp.speedHack.update();
 
 		sp.lastLocation = sp.location;
 
