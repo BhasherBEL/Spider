@@ -31,7 +31,7 @@ public class SpeedHack extends Cheat {
 		super.update();
 
 		// Player has not moved.
-		if(!sp.hasMoved()) {
+		if(!sp.hasMoved() || sp.getPlayer().isRiptiding()) {
 			if(!sp.hasBeenStatic) {
 				sp.hasBeenStatic = true;
 			}
